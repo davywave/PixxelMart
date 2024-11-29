@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛒Pixelmart</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+
+
+</head>
+<body>
+  <button id="theme-toggle">Welcome!!</button>
+  <!-- Signup/Login Form -->
+<div id="auth-container" style="display: none; position: fixed; bottom: 50%; right: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+  <h2>Create an Account</h2>
+  <form id="signup-form">
+      <input type="text" id="username" placeholder="Username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+      <input type="email" id="email" placeholder="Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+      <input type="password" id="password" placeholder="Password" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+      <button type="submit" style="background: #4caf50; color: white; padding: 10px; border: none; border-radius: 5px; width: 100%;">Sign Up</button>
+  </form>
+  <button onclick="toggleAuth()" style="background: #ddd; padding: 10px; border: none; border-radius: 5px; width: 100%; margin-top: 10px;">Cancel</button>
+</div>
+
+<!-- Signup/Login Button -->
+<button onclick="toggleAuth()" style="position: fixed; top: 20px; right: 70+0px; background: #4caf50; color: white; border: none; border-radius: 5px; padding: 10px;">Sign Up</button>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1>Pixelmart</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search products, brands, and categories">
+      <button class="search-btn">Search</button>
+    </div>
+    <div class="header-buttons">
+      <button class="header-btn">Account</button>
+      <button class="header-btn">Help</button>
+      <button class="header-btn">Cart</button>
+    </div>
+  </header>
+  <div class="promo-section">
+    <div class="promo-left">
+      <ul class="category-list">
+        <li><a href="#">Appliances</a></li>
+        <li><a href="#">Phones & Tablets</a></li>
+        <li><a href="#">Health & Beauty</a></li>
+        <li><a href="#">Home & Office</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Fashion</a></li>
+        <li><a href="#">Supermarket</a></li>
+        <li><a href="#">Computing</a></li>
+        <li><a href="#">Baby Products</a></li>
+        <li><a href="#">Gaming</a></li>
+        <li><a href="#">Musical Instruments</a></li>
+        <li><a href="#">Other categories</a></li>
+      </ul>
+    </div>
+    <div class="promo-center">
+      <div class="promo-banner">
+        <img src="Gadget pic 1.jpg" width="1150px" alt="Promo">
+        <div class="promo-text">
+          <h2>PixelMart Must-Have Deals</h2>
+          <p>Order Now & Save Big!</p>
+          <button>Shop Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="promo-right">
+      <div class="call-to-order">
+        <p>CALL TO ORDER</p>
+        <span>0907-799-9247</span>
+      </div>
+      <div class="sell-on-platform">
+        <p>Sell on PixelMart</p>
+      </div>
+      <div class="best-deals">
+        <p>Best Deals</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Black Friday Deals Section -->
+    <section class="deals-section">
+      <h2>Black Friday Deals</h2>
+      <div class="deals-grid">
+        <div class="product-card">
+          <img src="infinix_hot50i_green.png" alt="Product 1">
+          <p class="product-name">Infinix Hot 50i</p>
+          <p class="price"><span class="discounted-price">₦155,815</span> <span class="original-price">₦220,000</span></p>
+          <span class="discount-tag">-29%</span>
+        </div>
+        <!-- Add more product cards as needed -->
+      </div>
+    </section>
+    <div id="promo-banner" style="position: fixed; top: 0; left: 0; width: 100%; background: #f39c12; color: white; padding: 10px; text-align: center; z-index: 1000;">
+      🎉 ❤️Limited-Time Offer: Get 20% off on all products! <button onclick="dismissPromo()" style="background: none; border: none; color: white; font-weight: bold; margin-left: 10px;">✖</button>
+  </div>
+  
+
+    <!-- Flash Sale Section -->
+    <section class="flash-sale">
+      <h2>Flash Sale <span class="timer">Time Left: 09:04:52</span></h2>
+      <div class="flash-grid">
+        <div class="flash-product-card">
+          <img src="flash1.jpg" alt="Flash Product">
+          <p class="product-name">Ace Elec 20,000 mAh</p>
+          <p class="price"><span class="discounted-price">₦8,300</span> <span class="original-price">₦12,000</span></p>
+          <div class="stock-bar">
+            <div class="stock-progress" style="width: 70%;"></div>
+          </div>
+          <span class="discount-tag">-31%</span>
+        </div>
+        <!-- Add more flash product cards as needed -->
+      </div>
+    </section>
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="product1.jpg" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$50</p>
+      </div>
+      <div class="carousel-item">
+        <img src="product2.jpg" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$70</p>
+      </div>
+      <div class="carousel-item">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$30</p>
+      </div>
+      <button class="carousel-btn prev">&lt;</button>
+      <button class="carousel-btn next">&gt;</button>
+    </div>
+    
+    <div style="margin: 20px 0;">
+      <label for="filter">Filter by:</label>
+      <select id="filter" style="padding: 10px; margin-left: 10px;">
+          <option value="all">All Products</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+      </select>
+  </div>
+  
+  <script>
+  document.getElementById('filter').addEventListener('change', function() {
+      alert('Filtering by: ' + this.value); // Replace with your filtering logic.
+  });
+  </script>
+  <div id="product-comparison" style="margin: 20px;">
+    <h3>Compare Products</h3>
+    <div>
+        <select id="compare-product-1" style="padding: 10px;">
+            <option value="0">Select Product 1</option>
+            <option value="1">Product A</option>
+            <option value="2">Product B</option>
+        </select>
+        <select id="compare-product-2" style="padding: 10px;">
+            <option value="0">Select Product 2</option>
+            <option value="1">Product A</option>
+            <option value="2">Product B</option>
+        </select>
+    </div>
+    <div id="comparison-result" style="margin-top: 20px;"></div>
+</div>
+
+  
+    <!-- Product Section -->
+<section class="product-section">
+  <h2 class="section-title">Top Deals</h2>
+  <div class="product-row">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="infinix_hot50i_green.png" alt="Product 1" class="product-image" />
+      <h3 class="product-title">Infinix Hot 50i 6.78"</h3>
+      <p class="product-price">₦155,815 <span class="old-price">₦220,000</span></p>
+      <p class="product-discount">-29%</p>
+      <button class="buy-now" onclick="buyNow('Product Name')">Buy Now</button>
+      <button class="view-details" onclick="viewDetails('Product Name')">View Details</button>
+      <button class="add-to-cart" onclick="addToCart('Product Name')">Add to Cart</button>
+      <div id="social-media-share" style="margin: 20px;">
+        <h3>Share this Product:</h3>
+        <button onclick="shareOnPlatform('Facebook')" style="padding: 10px;">Facebook</button>
+        <button onclick="shareOnPlatform('Twitter')" style="padding: 10px;">Twitter</button>
+    </div>
+    
+
+
+    </div>
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="shopping.webp" alt="Product 2" class="product-image" />
+      <h3 class="product-title">Silver Crest 2L Blender</h3>
+      <p class="product-price">₦22,285 <span class="old-price">₦30,000</span></p>
+      <p class="product-discount">-26%</p>
+      <button class="buy-now" onclick="buyNow('Product Name')">Buy Now</button>
+      <button class="view-details" onclick="viewDetails('Product Name')">View Details</button>
+      <button class="add-to-cart" onclick="addToCart('Product Name')">Add to Cart</button>
+      <div id="social-media-share" style="margin: 20px;">
+        <h3>Share this Product:</h3>
+        <button onclick="shareOnPlatform('Facebook')" style="padding: 10px;">Facebook</button>
+        <button onclick="shareOnPlatform('Twitter')" style="padding: 10px;">Twitter</button>
+    </div>
+    
+
+
+    </div>
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="Hikers.jpg" alt="Product 3" class="product-image" />
+      <h3 class="product-title">Hikers 50" TV</h3>
+      <p class="product-price">₦344,397 <span class="old-price">₦409,999</span></p>
+      <p class="product-discount">-16%</p>
+      <button class="buy-now" onclick="buyNow('Product Name')">Buy Now</button>
+      <button class="view-details" onclick="viewDetails('Product Name')">View Details</button>
+      <button class="add-to-cart" onclick="addToCart('Product Name')">Add to Cart</button>
+      <h3>Share this Product:</h3>
+        <button onclick="shareOnPlatform('Facebook')" style="padding: 10px;">Facebook</button>
+        <button onclick="shareOnPlatform('Twitter')" style="padding: 10px;">Twitter</button>
+    </div>
+
+    </div>
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="watch.webp" alt="Product 4" class="product-image" />
+      <h3 class="product-title">Fashion Watch</h3>
+      <p class="product-price">₦4,985 <span class="old-price">₦9,655</span></p>
+      <p class="product-discount">-48%</p>
+      <button class="buy-now" onclick="buyNow('Product Name')">Buy Now</button>
+      <button class="view-details" onclick="viewDetails('Product Name')">View Details</button>
+      <button class="add-to-cart" onclick="addToCart('Product Name')">Add to Cart</button>
+      <h3>Share this Product:</h3>
+        <button onclick="shareOnPlatform('Facebook')" style="padding: 10px;">Facebook</button>
+        <button onclick="shareOnPlatform('Twitter')" style="padding: 10px;">Twitter</button>
+    </div>
+
+    </div>
+  </div>
+</section>
+<div class="product-section">
+  <h2>More to Love</h2>
+  <div class="product-grid">
+    <div class="product-card" onclick="showProductDetails('Product 1', 'NGN 2,442.09', 'product1.jpg', 'Detailed description of Product 1.')">
+      <img src="product1.jpg" alt="Product 1">
+      <h3>Product 1</h3>
+      <p class="price">NGN 2,442.09</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-card" onclick="showProductDetails('Product 2', 'NGN 6,652.16', 'product2.jpg', 'Detailed description of Product 2.')">
+      <img src="product2.jpg" alt="Product 2">
+      <h3>Product 2</h3>
+      <p class="price">NGN 6,652.16</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <!-- Add more product cards -->
+  </div>
+</div>
+
+<!-- Modal for Product Details -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Product Image">
+    <h3 id="modalTitle"></h3>
+    <p id="modalPrice"></p>
+    <p id="modalDescription"></p>
+  </div>
+</div>
+
+
+
+    <!-- Category Section -->
+    <section class="categories">
+      <a href="android.html"></a>
+      <h2>Phone Deals</h2>
+      <div class="categories-slider">
+        <div class="category">
+          <img src="android.jpg" alt="Android Phones">
+          <p>Android Phones</p>
+        </div>
+        <div class="category">
+          <img src="iphone.jpg" alt="iPhones">
+          <p>iPhones</p>
+        </div>
+        <div class="category">
+          <img src="tablets.jpg" alt="Android Tablets">
+          <p>Android Tablets</p>
+        </div>
+        <!-- Add more categories as needed -->
+      </div>
+    </section>
+
+    <!-- Top Deals Section -->
+    <section class="top-deals">
+      <h2>Top Phone Deals</h2>
+      <div class="top-deals-grid">
+        <div class="product-card">
+          <img src="top1.jpg" alt="Top Deal">
+          <p class="product-name">Infinix Note 12</p>
+          <p class="price"><span class="discounted-price">₦95,000</span> <span class="original-price">₦120,000</span></p>
+          <span class="discount-tag">-20%</span>
+        </div>
+        <!-- Add more top deal cards as needed -->
+      </div>
+    </section>
+    <div class="chat-button">
+      <img src="images/chat-icon.png" alt="Chat">
+    </div>
+    <button class="pay-btn" id="pay-card" title="Pay using your debit or credit card">Pay with Card</button>
+
+    <div class="progress-bar">
+      <div class="step completed">Cart</div>
+      <div class="step completed">Delivery</div>
+      <div class="step active">Payment</div>
+    </div>
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <p>Item 1: ₦50,000</p>
+      <p>Item 2: ₦30,000</p>
+      <hr>
+      <p><strong>Total: ₦80,000</strong></p>
+    </div>
+    <div class="icon">
+      <lottie-player src="success.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">What is your return policy?</button>
+        <div class="faq-answer">
+          <p>We offer a 30-day return policy for all products. Terms apply.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long does shipping take?</button>
+        <div class="faq-answer">
+          <p>Shipping usually takes 3-7 business days, depending on your location.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you ship internationally?</button>
+        <div class="faq-answer">
+          <p>Yes, we ship to most countries worldwide. Check our shipping page for more details.</p>
+        </div>
+      </div>
+    </section>
+    <div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px;">
+      <button onclick="toggleChat()" style="background: #4caf50; color: white; padding: 10px; border: none; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">💬</button>
+      <div id="chat-box" style="display: none; width: 300px; height: 400px; background: white; border: 1px solid #ccc; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: fixed; bottom: 70px; right: 20px;">
+          <iframe src="https://example-chat.com" style="width: 100%; height: 100%; border: none;"></iframe>
+      </div>
+  </div>
+  
+  <script>
+  function toggleChat() {
+      var chat = document.getElementById("chat-box");
+      chat.style.display = chat.style.display === "none" ? "block" : "none";
+  }
+  </script>
+  
+      
+    <div class="testimonial">
+      <p>Customer's Testimonies</p>
+      <img src="user.jpg" alt="User">
+      <p>"  Amazing website! Very user-friendly."</p>
+      <span>- Jane Doe</span>
+    </div>
+    <div style="text-align: center; margin: 20px 0;">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form>
+          <input type="email" placeholder="Enter your email" style="padding: 10px; width: 60%; max-width: 300px;">
+          <button style="padding: 10px 20px; background: #ff5722; color: #fff; border: none;">Subscribe</button>
+      </form>
+  </div>
+  <div style="position: fixed; top: 20px; right: 20px;">
+    <button id="dark-mode-toggle" style="padding: 10px; background: #333; color: white; border: none; cursor: pointer;">🌙 Dark Mode</button>
+</div>
+
+<script>
+const toggle = document.getElementById('dark-mode-toggle');
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+const darkModeStyles = document.createElement('style');
+darkModeStyles.textContent = `
+    body.dark-mode {
+        background: #121212;
+        color: #ffffff;
+    }
+    body.dark-mode a {
+        color: #4caf50;
+    }
+`;
+document.head.appendChild(darkModeStyles);
+</script>
+
+  
+    <footer class="extended-footer">
+      <div class="footer-sections">
+        <div>
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Transaction Services</a></li>
+            <li><a href="#">Agreement for non-EU/UK Consumers</a></li>
+            <li><a href="#">Terms and Conditions for EU/EEA/UK Consumers</a></li>
+            <li><a href="#">Take our feedback survey</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Shopping with us</h4>
+          <ul>
+            <li><a href="#">Making payments</a></li>
+            <li><a href="#">Delivery options</a></li>
+            <li><a href="#">Buyer Protection</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Collaborate with us</h4>
+          <ul>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Affiliate program</a></li>
+            <li><a href="#">Seller Log In</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pay with</h4>
+          <ul class="payment-icons">
+            <li><img src="visa.png" alt="Visa"></li>
+            <li><img src="mastercard.png" alt="MasterCard"></li>
+            <li><img src="paypal.png" alt="PayPal"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Pixelmart. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    <div class="security-badges">
+      <img src="images/secure-payment.png" alt="Secure Payment">
+      <img src="images/ssl-encrypted.png" alt="SSL Encrypted">
+    </div>
+    
+  </main>
+</body>
+</html>
+<!-- Chatbot -->
+<div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1px solid #ddd; display: none; z-index: 1000;">
+  <div style="background: #4caf50; color: white; padding: 10px; border-radius: 10px 10px 0 0; font-weight: bold;">
+      Chatbot
+      <button onclick="toggleChatbot()" style="float: right; background: none; border: none; color: white;">&times;</button>
+  </div>
+  <div id="chatbot-messages" style="height: 250px; overflow-y: auto; padding: 10px; background: #f9f9f9;"></div>
+  <div style="padding: 10px; display: flex; gap: 10px;">
+      <input type="text" id="chatbot-input" placeholder="Ask me something..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+      <button onclick="sendChatbotMessage()" style="padding: 10px; background: #4caf50; color: white; border: none; border-radius: 5px;">Send</button>
+  </div>
+</div>
+
+<!-- Chatbot Toggle Button -->
+<button onclick="toggleChatbot()" style="position: fixed; bottom: 20px; right: 20px; background: #4caf50; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px;">💬</button>
+<!-- Notifications -->
+<div id="notifications" style="position: fixed; top: 60px; right: 20px; width: 300px; max-height: 400px; overflow-y: auto; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); display: none; z-index: 1000;">
+  <h4 style="background: #4caf50; color: white; padding: 10px; margin: 0; border-radius: 10px 10px 0 0;">Notifications</h4>
+  <ul id="notification-list" style="list-style: none; padding: 10px; margin: 0;"></ul>
+</div>
+
+<!-- Notifications Button -->
+<button onclick="toggleNotifications()" style="position: fixed; top: 20px; right: 120px; background: #f39c12; color: white; border: none; border-radius: 5px; padding: 10px;">🔔</button>

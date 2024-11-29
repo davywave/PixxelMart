@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="payment-container">
+    <h1>Payment for <span id="product-name"></span></h1>
+    <form action="/process-payment" method="POST">
+      <label for="payment-method">Choose a payment method:</label>
+      <select id="payment-method" name="payment-method" required>
+        <option value="card">Card</option>
+        <option value="bank">Bank Transfer</option>
+        <option value="ussd">USSD</option>
+      </select>
+      <button type="submit">Proceed to Payment</button>
+    </form>
+  </div>
+
+  <script>
+    // Get product name from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('product');
+    document.getElementById('product-name').textContent = productName || 'Unknown Product';
+  </script>
+</body>
+</html>
